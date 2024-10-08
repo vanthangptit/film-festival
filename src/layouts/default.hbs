@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jquery Plugin</title>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="author" content="">
+    <meta name="GENERATOR" content="MSHTML 11.00.9600.18838">
+
+
+    {{#if hasVendorStyles}}
+    <link href="styles/vendors.css" rel="stylesheet">
+    {{/if}}
+    <link href="styles/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <header id="header">
+      {{>partials/header data=data.header}}
+    </header>
+
+    {{#> content-block}}
+    {{/content-block}}
+
+    <footer id="footer">
+      {{>partials/footer data=data.footer}}
+    </footer>
+
+    <script src="scripts/vendors.min.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

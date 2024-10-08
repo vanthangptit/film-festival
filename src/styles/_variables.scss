@@ -1,0 +1,180 @@
+// break points
+$break-point-375: 375px;
+$break-point-576: 576px;
+$break-point-768: 768px;
+$break-point-992: 992px;
+$break-point-1024: 1024px;
+$break-point-1200: 1200px;
+$break-point-1328: 1328px;
+
+$media-screen-mobile-small: '(max-width: #{$break-point-375 - 1})';
+$media-screen-mobile-normal: '(max-width: #{$break-point-576 - 1})';
+$media-screen-mobile: '(max-width: #{$break-point-768 - 1})';
+$media-screen-tablet: '(min-width: #{$break-point-768}) and (max-width: #{$break-point-992 - 1})';
+$media-screen-desktop: '(min-width: #{$break-point-992}) and (max-width: #{$break-point-1200 - 1})';
+$media-not-desktop: '(max-width: #{$break-point-992 - 1})';
+$media-screen-tablet-desktop: '(min-width: #{$break-point-768}) and (max-width: #{$break-point-1200 - 1})';
+$media-small-desktop: '(min-width: #{$break-point-1200 + 1})';
+$media-large-desktop: '(min-width: #{$break-point-1328})';
+
+$media-xs: '(max-width: #{$break-point-576 - 1})';
+$media-sm: '(min-width: #{$break-point-576})';
+$media-md: '(min-width: #{$break-point-768})';
+$media-lg: '(min-width: #{$break-point-992})';
+$media-xl: '(min-width: #{$break-point-1024})';
+$media-xxl: '(min-width: #{$break-point-1200})';
+
+// font variables
+$font-notoSans: 'NotoSans', sans-serif;
+$font-family-base: $font-notoSans;
+
+// font-size-base
+$font-base: 16px;
+$line-height-base: 1.15;
+// container
+$container-max-width: 1328px;
+//spacing
+$spacing-component-desktop: 2rem;
+$spacing-component-mb: 1rem;
+//Gutter width
+$grid-gutter-width: 30px;
+$content-horizontal-padding: $grid-gutter-width / 2;
+
+$font-size: (
+  "size-1": 2.25rem,    // 36px
+  "size-2": 2rem,       // 32px
+  "size-3": 1.75rem,    // 28px
+  "size-4": 1.375rem,   // 22px
+  "size-5": 1.125rem,   // 18px
+  "size-6": 1rem,       // 16px
+  "size-7": 0.875rem,   // 14px
+  "size-8": 0.75rem     // 12px
+);
+
+$min-vw: 360px;
+$max-vw: 1140px;
+
+$btn-border-radius:           3rem;
+$btn-border-radius-lg:        3rem;
+$btn-border-radius-sm:        3rem;
+
+$btn-font-weight:             600;
+$headings-line-height:        1.3;
+
+$btn-padding-y-sm:            .25rem;
+$btn-padding-x-sm:            1rem;
+$btn-padding-y:               .5rem;
+$btn-padding-x:               1.5rem;
+$btn-padding-x-lg:            1.75rem; //$input-btn-padding-y-lg !default;
+$btn-padding-y-lg:            .75rem; //$input-btn-padding-x-lg !default;
+
+//colors
+$color-primary: #F3410E;
+$color-secondary: #424242;
+$color-tertiary: #003949;
+
+$theme-colors: (
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+  "tertiary": $color-tertiary,
+);
+
+$hover-colors: (
+  "primary": #5eb0a2,
+  "secondary": #f2844f,
+  "tertiary": #365363
+);
+
+$active-colors: (
+  "primary": #c0e1da,
+  "secondary": #fbc6a7,
+  "tertiary": #939da9
+);
+
+$color-white: #fff !default;
+$color-gray-100: #f3f3f3 !default;
+$color-gray-200: #e9ecef !default;
+$color-gray-300: #dee2e6 !default;
+$color-gray-400: #ced4da !default;
+$color-gray-500: #b3b3b3 !default;
+$color-gray-600: #6c757d !default;
+$color-gray-700: #454545 !default;
+$color-gray-800: #393939 !default;
+$color-gray-900: #212529 !default;
+$color-black:    #000 !default;
+
+$grays: (
+  "100": $color-gray-100,
+  "200": $color-gray-200,
+  "300": $color-gray-300,
+  "400": $color-gray-400,
+  "500": $color-gray-500,
+  "600": $color-gray-600,
+  "700": $color-gray-700,
+  "800": $color-gray-800,
+  "900": $color-gray-900
+);
+
+$text-colors: map_merge(
+    (
+      "white": $color-white,
+      "light": #f8f9fa,
+      "dark":  #333333
+    ),
+    $theme-colors
+);
+
+$backgrounds: map_merge(
+    (
+      "white": $color-white,
+      "light": #f2f2f2,
+      "dark":  $color-black
+    ),
+    $theme-colors
+);
+
+$color-in-bg: (
+  "primary": $color-white,
+  "secondary": $color-white,
+  "tertiary": $color-white,
+  "white": #333333,
+  "light": $color-black,
+  "dark":  $color-white
+);
+
+@each $color, $value in $text-colors {
+  .text-#{$color} {
+    color: $value;
+  }
+}
+
+@each $color, $value in $grays {
+  .text-grays-#{$color} {
+    color: $value;
+  }
+}
+
+@each $color, $value in $backgrounds {
+  .bg-#{$color} {
+    background-color: $value;
+  }
+}
+
+@each $color, $value in $text-colors {
+  .sc-bg-#{$color} {
+    background-color: $value;
+
+    .sc-text {
+      color: map-get($color-in-bg, $color);
+    }
+
+    .sc-border {
+      border: 1px solid map-get($color-in-bg, $color);
+    }
+  }
+}
+
+//add variable color
+$link-color:                  $color-secondary;
+$link-hover-color:            $color-secondary;
+$color-text-base:             $color-black;

@@ -1,0 +1,6 @@
+{
+  "imagePath": "assets/images/",
+  "buildEnv": "development",
+  "baseUrl": "http://localhost:8081/",
+  "loginUrl": ""
+}
