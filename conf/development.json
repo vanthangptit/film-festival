@@ -1,0 +1,39 @@
+{
+  "buildFolders": {
+    "contentsPaths": [
+      "./contents/**/*"
+    ],
+    "stylesPaths": [
+      "./src/styles/**/*.scss"
+    ],
+    "scriptsPaths": [
+      "./src/scripts/**/*.js"
+    ],
+    "assetsPaths": [
+      "./src/assets/**/*"
+    ],
+    "htmlPaths": [
+      "./src/layouts/**/*",
+      "./src/pages/**/*",
+      "./src/templates/**/*"
+    ],
+    "partialsPaths": [
+      "./src/templates"
+    ],
+    "layoutsPath": "./src/layouts",
+    "pagesPath": "./src/pages/**/*"
+  },
+  "dataPath": "./src/content",
+  "pagesBasePath": "./src/pages",
+  "outputFolders": {
+    "distPath": "./dist/",
+    "sitecorePath": "../../",
+    "tmpPath": "./.tmp/"
+  },
+  "vendors": {
+    "scripts": [
+      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ]
+  },
+  "gtm": ""
+}

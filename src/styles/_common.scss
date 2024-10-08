@@ -1,0 +1,10 @@
+// container
+.container-fluid {
+  max-width: $container-max-width;
+
+}
+.container-layout {
+  @media #{$media-small-desktop} {
+    max-width: $container-max-width;
+  }
+}

@@ -1,0 +1,110 @@
+@mixin ratio($ratio) {
+  position: relative;
+  width: 100%;
+  padding-bottom: $ratio;
+
+  & .element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-property($nameProperties, $min-value, $max-value, $min-vw, $max-vw) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-value);
+  $u4: unit($max-value);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      #{$nameProperties}: $min-value;
+
+      @media screen and (min-width: $min-vw) {
+        #{$nameProperties}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+
+      @media screen and (min-width: $max-vw) {
+        #{$nameProperties}: $max-value;
+      }
+    }
+  }
+}
+
+@mixin fluid-type($min-font-size, $max-font-size, $min-vw: 360px, $max-vw: 1200px) {
+  @include fluid-property('font-size', $min-font-size, $max-font-size, $min-vw, $max-vw);
+}
+
+@mixin fluid-type-mobile($min-font-size, $max-font-size) {
+  @media screen and (max-width: 767px) {
+    @include fluid-property('font-size', $min-font-size, $max-font-size, 360px, 767px);
+  }
+}
+
+@mixin fluid-type-not-mobile($min-font-size, $max-font-size) {
+  @media screen and (min-width: 768px) {
+    @include fluid-property('font-size', $min-font-size, $max-font-size, 768px, 1200px);
+  }
+}
+
+@mixin fluid-width($min-width, $max-width, $min-vw: 360px, $max-vw: 1200px) {
+  @include fluid-property('width', $min-width, $max-width, $min-vw, $max-vw);
+}
+
+@mixin fluid-width-not-mobile($min-width, $max-width) {
+  @media screen and (min-width: 768px) {
+    @include fluid-property('width', $min-width, $max-width, 768px, 1200px);
+  }
+}
+
+@mixin fluid-width-mobile($min-width, $max-width) {
+  @media screen and (max-width: 767px) {
+    @include fluid-property('width', $min-width, $max-width, 360px, 767px);
+  }
+}
+
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+@mixin make-container-fluid {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media #{$media-small-desktop} {
+    max-width: $container-max-width;
+  }
+}
+
+@mixin column-gutter() {
+  padding-left: $grid-gutter-width / 2;
+  padding-right: $grid-gutter-width / 2;
+}
+
+@mixin text-block($theme-bg, $padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+
+  span {
+    color: white;
+    line-height: 2;
+    background-color: $theme-bg;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    box-shadow: inset 0 -10px 5px $theme-bg, #{$padding - 5px} 0 0 5px $theme-bg, inset 0 10px 5px $theme-bg, -#{$padding - 5px} 0 0 5px $theme-bg;
+  }
+}

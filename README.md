@@ -1,1 +1,5 @@
-# film-festival
+# Film Festival
+
+#Run app
+ - npm i
+ - npm run start
