@@ -1,10 +1,16 @@
 // container
 .container-fluid {
   max-width: $container-max-width;
-
 }
-.container-layout {
-  @media #{$media-small-desktop} {
+.container {
+  @media #{$media-large-desktop} {
     max-width: $container-max-width;
   }
+}
+
+.container-fluid,
+.container {
+  @include column-gutter;
+  margin-left: auto;
+  margin-right: auto;
 }

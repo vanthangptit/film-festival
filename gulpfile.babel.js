@@ -97,6 +97,14 @@ export const styles = () => {
     .pipe(gulp.dest(`${tmpPath}/styles`));
 };
 
+const vendorStyles = () => {
+  return gulp.src(vendors.styles)
+    .pipe(concat('vendors.css'))
+    .pipe(cleanCss())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(`${tmpPath}/styles`));
+};
+
 export const scriptsVendor = () => {
   return gulp.src(vendors.scripts)
     .pipe(concat('vendors.min.js'))
@@ -175,6 +183,7 @@ export const build = gulp.series(
   gulp.parallel(
     html,
     styles,
+    vendorStyles,
     scripts,
     scriptsVendor,
     handlebarsRuntime,
@@ -187,6 +196,7 @@ export const compile = gulp.series(
   clean,
   gulp.parallel(
     styles,
+    vendorStyles,
     scripts,
     scriptsVendor,
     handlebarsRuntime,

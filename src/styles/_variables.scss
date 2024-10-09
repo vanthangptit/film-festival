@@ -6,6 +6,7 @@ $break-point-992: 992px;
 $break-point-1024: 1024px;
 $break-point-1200: 1200px;
 $break-point-1328: 1328px;
+$break-point-1600: 1600px;
 
 $media-screen-mobile-small: '(max-width: #{$break-point-375 - 1})';
 $media-screen-mobile-normal: '(max-width: #{$break-point-576 - 1})';
@@ -15,7 +16,8 @@ $media-screen-desktop: '(min-width: #{$break-point-992}) and (max-width: #{$brea
 $media-not-desktop: '(max-width: #{$break-point-992 - 1})';
 $media-screen-tablet-desktop: '(min-width: #{$break-point-768}) and (max-width: #{$break-point-1200 - 1})';
 $media-small-desktop: '(min-width: #{$break-point-1200 + 1})';
-$media-large-desktop: '(min-width: #{$break-point-1328})';
+$media-middle-desktop: '(min-width: #{$break-point-1328})';
+$media-large-desktop: '(min-width: #{$break-point-1600})';
 
 $media-xs: '(max-width: #{$break-point-576 - 1})';
 $media-sm: '(min-width: #{$break-point-576})';
@@ -32,13 +34,16 @@ $font-family-base: $font-notoSans;
 $font-base: 16px;
 $line-height-base: 1.15;
 // container
-$container-max-width: 1328px;
-//spacing
+$container-max-width: 1600px;
+// spacing
 $spacing-component-desktop: 2rem;
 $spacing-component-mb: 1rem;
-//Gutter width
-$grid-gutter-width: 30px;
-$content-horizontal-padding: $grid-gutter-width / 2;
+// Gutter width
+$grid-gutter-width: 48px;
+
+// z-index
+$z-index-200: 200;
+$z-index-99999: 99999;
 
 $font-size: (
   "size-1": 2.25rem,    // 36px
@@ -178,3 +183,6 @@ $color-in-bg: (
 $link-color:                  $color-secondary;
 $link-hover-color:            $color-secondary;
 $color-text-base:             $color-black;
+
+$color-link-dropdown-border: rgba(255, 255, 255, 0.20);
+$color-link-dropdown-box-shadow: rgba(255, 255, 255, 0.50);

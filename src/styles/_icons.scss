@@ -1,3 +1,23 @@
+$icomoon-font-family: "icomoon" !default;
+$icomoon-font-path: "fonts" !default;
+
+$icon-outline-play: unquote('"\\e900"');
+$icon-chevron-down: unquote('"\\e901"');
+$icon-chevron-left: unquote('"\\e902"');
+$icon-chevron-right: unquote('"\\e903"');
+$icon-chevron-up: unquote('"\\e904"');
+$icon-plus: unquote('"\\e905"');
+$icon-search: unquote('"\\e906"');
+$icon-spinner: unquote('"\\e97a"');
+$icon-play: unquote('"\\ea1c"');
+$icon-arrow-up-left: unquote('"\\ea39"');
+$icon-arrow-up: unquote('"\\ea3a"');
+$icon-arrow-up-right: unquote('"\\ea3b"');
+$icon-arrow-right: unquote('"\\ea3c"');
+$icon-arrow-down: unquote('"\\ea3e"');
+$icon-arrow-left: unquote('"\\ea40"');
+$icon-svg: unquote('"\\eae9"');
+
 @font-face {
   font-family: 'icomoon';
   src:  url($font-path + 'icons/icomoon.eot?af1c00&v=1');
@@ -9,10 +29,10 @@
   font-style: normal;
 }
 
-%icon {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -24,75 +44,29 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  @extend %icon;
-}
-
-$icon-menu-nav: "\e900";
-$icon-arrow-down: "\e901";
-$icon-arrow-left: "\e902";
-$icon-arrow-up: "\e903";
-$icon-arrow-right: "\e904";
-$icon-close: "\e905";
-$icon-facebook: "\e906";
-$icon-linkedin: "\e907";
-$icon-minus: "\e908";
-$icon-plus: "\e909";
-$icon-search: "\e90a";
-$icon-swirl: "\e90b";
-$icon-youtube: "\e90c";
-$icon-twitter: "\ea96";
-$icon-whatsapp: "\ea93";
-$icon-email: "\e945";
-$icon-maintenance: "\e90d";
-$icon-bell: "\e90f";
-$icon-instagram: "\ea92";
-$icon-checkmark: "\ea10";
-$icon-date: "\e953";
-
-.icon-menu-nav {
+.icon-outline-play {
   &:before {
-    content: $icon-menu-nav;
+    content: $icon-outline-play;
   }
 }
-.icon-arrow-down {
+.icon-chevron-down {
   &:before {
-    content: $icon-arrow-down;
+    content: $icon-chevron-down;
   }
 }
-.icon-arrow-left {
+.icon-chevron-left {
   &:before {
-    content: $icon-arrow-left;
+    content: $icon-chevron-left;
   }
 }
-.icon-arrow-up {
+.icon-chevron-right {
   &:before {
-    content: $icon-arrow-up;
+    content: $icon-chevron-right;
   }
 }
-.icon-arrow-right {
+.icon-chevron-up {
   &:before {
-    content: $icon-arrow-right;
-  }
-}
-.icon-close {
-  &:before {
-    content: $icon-close;
-  }
-}
-.icon-facebook {
-  &:before {
-    content: $icon-facebook;
-  }
-}
-.icon-linkedin {
-  &:before {
-    content: $icon-linkedin;
-  }
-}
-.icon-minus {
-  &:before {
-    content: $icon-minus;
+    content: $icon-chevron-up;
   }
 }
 .icon-plus {
@@ -105,53 +79,48 @@ $icon-date: "\e953";
     content: $icon-search;
   }
 }
-.icon-swirl {
+.icon-spinner {
   &:before {
-    content: $icon-swirl;
+    content: $icon-spinner;
   }
 }
-.icon-youtube {
+.icon-play {
   &:before {
-    content: $icon-youtube;
+    content: $icon-play;
   }
 }
-.icon-twitter {
+.icon-arrow-up-left {
   &:before {
-    content: $icon-twitter;
+    content: $icon-arrow-up-left;
   }
 }
-.icon-whatsapp {
+.icon-arrow-up {
   &:before {
-    content: $icon-whatsapp;
+    content: $icon-arrow-up;
   }
 }
-.icon-email {
+.icon-arrow-up-right {
   &:before {
-    content: $icon-email;
+    content: $icon-arrow-up-right;
   }
 }
-.icon-maintenance {
+.icon-arrow-right {
   &:before {
-    content: $icon-maintenance;
+    content: $icon-arrow-right;
   }
 }
-.icon-bell {
+.icon-arrow-down {
   &:before {
-    content: $icon-bell;
+    content: $icon-arrow-down;
   }
 }
-.icon-instagram {
+.icon-arrow-left {
   &:before {
-    content: $icon-instagram;
+    content: $icon-arrow-left;
   }
 }
-.icon-checkmark {
+.icon-svg {
   &:before {
-    content: $icon-checkmark;
-  }
-}
-.icon-date {
-  &:before {
-    content: $icon-date;
+    content: $icon-svg;
   }
 }

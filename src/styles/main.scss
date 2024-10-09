@@ -7,3 +7,13 @@
 @import './fonts';
 @import './common';
 @import './elements';
+
+@import './components/header';
+@import './components/logo-header';
+@import './components/link-dropdown';
+
+
+//testing
+body {
+  background-color: #000;
+}

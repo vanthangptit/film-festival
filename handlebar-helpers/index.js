@@ -11,6 +11,7 @@ import stringify from './helpers/stringify';
 import loadData from './decorators/load-data';
 import loadJson from './decorators/load-json';
 import getFile from './helpers/getFile';
+import getImagePath from './helpers/getImagePath';
 export default {
   helpers: {
     inArray,
@@ -24,6 +25,7 @@ export default {
     gt,
     length,
     stringify,
+    getImagePath,
   },
   decorators: {
     loadData,
