@@ -30,6 +30,11 @@
   &__swiper {
     height: 1.1em;
     overflow: hidden;
+
+    a {
+      text-decoration: none;
+      color: $color-white;
+    }
   }
 
   &__button {
@@ -61,5 +66,18 @@
     padding: 12px 25px;
     color: $color-white;
     line-height: 21px;
+
+    a {
+      text-decoration: none;
+      color: $color-white;
+    }
+
+    &:hover {
+      background-color: $color-black;
+
+      a {
+        color: $color-primary;
+      }
+    }
   }
 }
