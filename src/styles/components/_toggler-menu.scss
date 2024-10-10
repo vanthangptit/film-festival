@@ -1,0 +1,147 @@
+.toggler-menu {
+  $self: &;
+
+  position: relative;
+  width: 24px;
+  height: 25px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: inline-block;
+  z-index: $z-index-99999;
+  cursor: pointer;
+
+  &:hover,
+  &.is-active {
+    #{$self}__line {
+      background-color: $color-primary;
+    }
+  }
+
+  &.is-active {
+    #{$self}__line--tline {
+      top: 18px;
+      left: 18px;
+      transform: rotate(45deg);
+    }
+
+    #{$self}__line--tline.is-line2 {
+      top: 5px;
+      left: 15px;
+      display: none;
+      transform: rotate(45deg);
+    }
+
+    #{$self}__line--tline.is-line3 {
+      top: 18px;
+      left: 0;
+      transform: rotate(45deg);
+    }
+
+    #{$self}__line--mline {
+      top: 5px;
+      left: 5px;
+      display: none;
+      transform: rotate(45deg);
+    }
+
+    #{$self}__line--mline.is-line2 {
+      top: 9px;
+      left: 9px;
+      display: block;
+      transform: rotate(45deg);
+    }
+
+    #{$self}__line--mline.is-line3 {
+      top: 15px;
+      left: 15px;
+      display: none;
+      transform: rotate(45deg);
+    }
+
+    #{$self}__line--bline {
+      top: 0;
+      left: 18px;
+      transform: rotate(45deg);
+    }
+
+    #{$self}__line--bline.is-line2 {
+      top: 15px;
+      left: 5px;
+      display: none;
+      transform: rotate(45deg);
+    }
+
+    #{$self}__line--bline.is-line3 {
+      top: 0;
+      left: 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    vertical-align: middle;
+    margin: 0 auto;
+    max-width: 1250px;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 30%;
+    background-color: $color-white;
+    transition: 0.3s all ease-out;
+    -webkit-transition: 0.3s all ease-out;
+    font-size: 0;
+    line-height: 0;
+    opacity: 0.7;
+
+    &--tline {
+      top: 0;
+
+      &.is-line2 {
+        top: 0;
+        left: 9px;
+      }
+      &.is-line3 {
+        top: 0;
+        left: 18px;
+      }
+    }
+
+    &--mline {
+      top: 9px;
+
+      &.is-line2 {
+        top: 9px;
+        left: 9px;
+      }
+
+      &.is-line3 {
+        top: 9px;
+        left: 18px;
+      }
+    }
+
+    &--bline {
+      top: 18px;
+
+      &.is-line2 {
+        top: 18px;
+        left: 9px;
+      }
+
+      &.is-line3 {
+        top: 18px;
+        left: 18px;
+      }
+    }
+  }
+}

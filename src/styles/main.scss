@@ -8,11 +8,13 @@
 @import './common';
 @import './elements';
 
-@import './components/header';
-@import './components/logo-header';
-@import './components/link-dropdown';
-@import 'components/lang-toggle-button';
-
+@import 'components/header';
+@import 'components/logo-header';
+@import 'components/link-dropdown';
+@import 'components/lang-button';
+@import 'components/link-icon-search';
+@import 'components/toggler-menu';
+@import 'components/navbar';
 
 //testing
 body {

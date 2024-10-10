@@ -14,3 +14,48 @@
   margin-left: auto;
   margin-right: auto;
 }
+.is-desktop {
+  display: none;
+
+  @media #{$media-xl} {
+    display: block;
+  }
+}
+.is-not-desktop {
+  display: block;
+
+  @media #{$media-xl} {
+    display: none;
+  }
+}
+.is-tablet {
+  display: none;
+
+  @media #{$media-screen-tablet} {
+    display: block;
+  }
+}
+.is-not-tablet {
+  display: block;
+
+  @media #{$media-screen-tablet} {
+    display: none;
+  }
+}
+.is-mobile {
+  display: block;
+
+  @media #{$media-md} {
+    display: none;
+  }
+}
+.is-not-mobile {
+  display: none;
+
+  @media #{$media-md} {
+    display: block;
+  }
+}
+.is-hidden-scroll {
+  overflow: hidden;
+}

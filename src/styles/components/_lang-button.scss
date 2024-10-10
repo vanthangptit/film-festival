@@ -1,0 +1,23 @@
+.lang-button {
+  border-radius: 3rem;
+  border: 1px solid $color-link-dropdown-border;
+  box-shadow: 0 0 4px 0 $color-link-dropdown-box-shadow;
+  z-index: $z-index-99999;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background: $color-secondary;
+    border: 1px solid $color-secondary;
+    box-shadow: 0 0 4px 0 $color-secondary;
+    border-radius: 30px;
+  }
+
+  &__link {
+    display: inline-block;
+    color: #FFF;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}

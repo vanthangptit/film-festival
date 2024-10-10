@@ -1,0 +1,38 @@
+.header {
+  &__line {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      border-top: 1px solid $color-header-line;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+
+    @media #{$media-xl} {
+      padding: 30px 0;
+    }
+  }
+
+  &__top-center {
+    display: flex;
+    flex: 1 1 auto;
+
+    @media #{$media-xl} {
+      justify-content: center;
+    }
+  }
+
+  &__top-right-list {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+}

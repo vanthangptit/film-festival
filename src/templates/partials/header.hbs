@@ -1,48 +1,33 @@
 <header class="header js-header">
-  <div class="sticky-header-wrapper js-sticky-header-wrapper">
+  <div class="header__line">
     <div class="container">
       <div class="header__top">
-        <div class="header__top-left">
+        <div class="header__top-left is-desktop">
           {{>views/molecules/link-dropdown}}
         </div>
         <div class="header__top-center">
           {{>views/molecules/logo-header}}
         </div>
-        <div class="header__top-right">Widget</div>
+        <div class="header__top-right">
+          <ul class="header__top-right-list">
+            <li class="is-desktop">
+              {{>views/atoms/lang-button}}
+            </li>
+            <li class="is-desktop">
+              {{>views/atoms/link-icon-search}}
+            </li>
+            <li>
+              {{>views/molecules/toggler-menu}}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="nav-contain bg-secondary">
-    <div class="container">
-      <nav class="navbar-main">
-        <a class="nav-logo" href="<%= data.logo.href %>" alt="Home Page">
-          Film Festival
-        </a>
-
-        <div class="hamburger-icon js-hamburger-icon"><span></span></div>
-
-        <ul class="navbar-nav">
-          <li class="navbar-nav__item item-dropdown js-item-dropdown">
-            <a class="navbar-nav__link" alt="alt" title="#">
-              BJJ2025
-            </a>
-
-            <ul class="bg-secondary">
-              <li class="navbar-nav__item">
-                <a class="navbar-nav__link" href="<%= data.menu[i].subItems[j].href %>" alt="<%= data.menu[i].subItems[j].alt %>">
-                  dropdown 1
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="navbar-nav__item <% if (data.menu[i].isHomePage) { %>d-block d-md-none<% }%>">
-            <a class="navbar-nav__link" href="<%= data.menu[i].href %>"
-               alt="<%= data.menu[i].alt %>" title="<%= data.menu[i].title %>"><%= data.menu[i].text %></a>
-          </li>
-        </ul>
-        <div class="navbar-main__backdrop hidden js-backdrop"></div>
-      </nav>
+  <div class="js-header-menu">
+    <div class="sticky-header-menu js-sticky-header-menu">
+      {{>views/molecules/navbar}}
     </div>
   </div>
 </header>
