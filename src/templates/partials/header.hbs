@@ -1,32 +1,32 @@
 <header class="header js-header">
-  <div class="header__line">
-    <div class="container">
-      <div class="header__top">
-        <div class="header__top-left is-desktop">
-          {{>views/molecules/link-dropdown}}
-        </div>
-        <div class="header__top-center">
-          {{>views/molecules/logo-header}}
-        </div>
-        <div class="header__top-right">
-          <ul class="header__top-right-list">
-            <li class="is-desktop">
-              {{>views/atoms/lang-button}}
-            </li>
-            <li class="is-desktop">
-              {{>views/atoms/link-icon-search}}
-            </li>
-            <li>
-              {{>views/molecules/toggler-menu}}
-            </li>
-          </ul>
+  <div class="sticky-header js-sticky-header">
+    <div class="header__line">
+      <div class="container">
+        <div class="header__top">
+          <div class="header__top-left is-desktop">
+            {{>views/molecules/link-dropdown}}
+          </div>
+          <div class="header__top-center">
+            {{>views/molecules/logo-header}}
+          </div>
+          <div class="header__top-right">
+            <ul class="header__top-right-list">
+              <li class="is-desktop">
+                {{>views/atoms/lang-button}}
+              </li>
+              <li class="is-desktop">
+                {{>views/atoms/link-icon-search}}
+              </li>
+              <li>
+                {{>views/molecules/toggler-menu}}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="js-header-menu">
-    <div class="sticky-header-menu js-sticky-header-menu">
+    <div class="header__menu">
       {{>views/molecules/navbar}}
     </div>
   </div>

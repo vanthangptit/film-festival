@@ -6,6 +6,7 @@ $break-point-992: 992px;
 $break-point-1024: 1024px;
 $break-point-1200: 1200px;
 $break-point-1328: 1328px;
+$break-point-1500: 1500px;
 $break-point-1600: 1600px;
 
 $media-screen-mobile-small: '(max-width: #{$break-point-375 - 1})';
@@ -47,6 +48,7 @@ $grid-gutter-width: 48px;
 $z-index-100: 100;
 $z-index-200: 200;
 $z-index-99999: 99999;
+$z-index-109999: 109999;
 
 $font-size: (
   "size-1": 2.25rem,    // 36px
@@ -189,6 +191,9 @@ $link-color:                  $color-secondary;
 $link-hover-color:            $color-secondary;
 $color-text-base:             $color-black;
 
+$bg-header-fixed: rgba(0, 0, 0, 0.60);
 $color-link-dropdown-border: rgba(255, 255, 255, 0.20);
 $color-link-dropdown-box-shadow: rgba(255, 255, 255, 0.50);
+$color-dropdown-item-border: #212121;
+$bg-dropdown-item: #0e0e0e;
 $color-header-line: #ffffff20;

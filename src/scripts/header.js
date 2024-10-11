@@ -3,16 +3,18 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!headerElement) return;
 
   let lastKnownScrollPosition = 0;
-  const headerMenuElement = headerElement.querySelector('.js-header-menu');
-  const stickyHeaderMenuElement = headerElement.querySelector('.js-sticky-header-menu');
-
-  console.log('headerMenuElement: ', headerMenuElement.offsetTop)
+  const stickyHeaderElement = headerElement.querySelector('.js-sticky-header');
+  const navbarDropdownElement = headerElement.querySelector('.js-navbar-dropdown');
 
   window.onscroll = function () {
     if (lastKnownScrollPosition > document.documentElement.scrollTop) {
-      stickyHeaderMenuElement.classList.add('is-scrolling');
+      if (headerElement.offsetTop >= document.documentElement.scrollTop) {
+        stickyHeaderElement.classList.remove('is-fixed');
+      } else {
+        stickyHeaderElement.classList.add('is-fixed');
+      }
     } else {
-      stickyHeaderMenuElement.classList.remove('is-scrolling');
+      stickyHeaderElement.classList.remove('is-fixed');
     }
     lastKnownScrollPosition = document.documentElement.scrollTop;
   };

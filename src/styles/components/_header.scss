@@ -1,4 +1,61 @@
 .header {
+  $self: &;
+
+  .sticky-header.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: sticky-header-fixed .3s ease-in-out forwards;
+    background-color: $bg-header-fixed;
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+
+    #{$self}__menu {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      z-index: 1;
+      transform: translateX(-50%);
+    }
+
+    #{$self}__top-left {
+      display: none;
+    }
+
+    #{$self}__top-center {
+      justify-content: flex-start;
+    }
+
+    @media (min-width: #{$break-point-1024}) and (max-width: #{$break-point-1500}) {
+      .logo-header {
+        display: flex;
+
+        &__link {
+          display: inline-block;
+          width: 50px;
+          overflow: hidden;
+
+          img {
+            display: flex;
+            width: 220px;
+          }
+        }
+      }
+
+      #{$self}__menu {
+        left: 70px;
+        transform: translateX(0);
+      }
+
+      .navbar-menu {
+        &__link {
+          @include fluid-type(15px, 20px, $break-point-1024, $break-point-1500);
+        }
+      }
+    }
+  }
+
   &__line {
     position: relative;
 
